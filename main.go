@@ -29,6 +29,15 @@ func splitt(sum int) (int, int) {
 	return x, y
 }
 
+// variables
+var c, python, java bool
+
+var (
+	ToBe   bool   = false
+	MaxInt uint64 = 1<<64 - 1
+	str    string
+)
+
 func main() {
 	fmt.Println("Hello", rand.Intn(10))
 	fmt.Println(math.Pi)
@@ -38,4 +47,15 @@ func main() {
 	fmt.Println(a, b)
 	fmt.Println(split(17))
 	fmt.Println(splitt(17))
+	i := 10
+	fmt.Println(c, python, java, i)
+	fmt.Println(ToBe)
+	fmt.Println(MaxInt)
+	fmt.Printf("%q", str)
+
+	sum := 0
+	for i := 0; i < 100; i++ {
+		sum += i
+	}
+	fmt.Println(sum)
 }
