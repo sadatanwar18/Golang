@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"math/rand"
+	
 )
 
 func add(x int, y int) int {
@@ -183,4 +184,19 @@ func main() {
 
 	v1 := Ex1{3,4}
 	fmt.Println(v1.Abs())
+
+	var s Shape
+	s = Rectangle{Width: 4, Height: 5}
+	fmt.Println("Rectangle Area:", s.Area())
+	fmt.Println("Rectange Perimeter:", s.Perimeter())
+
+	s = Circle{Radius: 3}
+	fmt.Println("Circle Area", s.Area())
+	fmt.Println("Circle Perimeter", s.Perimeter())
+
+	r := Rectangle{7,8}
+	c := Circle{7}
+
+	PrintShapeInfo(r)
+	PrintShapeInfo(c)
 }
