@@ -79,4 +79,11 @@ func describe (i interface{}){
 	}
 
 
-	
+	// generics
+
+	func Index[T comparable](s []T, v T) int {
+		for i, x := range s {
+			if x == v {return i}
+		}
+		return  -1
+	}

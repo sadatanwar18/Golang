@@ -240,4 +240,7 @@ func main() {
 	second := person{"sahil", 23}
 	// fmt here checks if the type implements the fmt.Stringer interface
 	fmt.Println(first, second)
+
+	newI := Index([]int {10,20,30,40}, 20)
+	fmt.Println(newI)
 }
