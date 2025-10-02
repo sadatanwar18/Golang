@@ -80,6 +80,18 @@ func (v Ex1) Abs() float64{
 }
 
 
+type person struct{
+		Name string
+		Age int
+	}
+
+	// method from Stringer interface
+	func (p person) String() string  {
+		return fmt.Sprintf("%v (%v years)", p.Name, p.Age)
+	}
+
+
+
 func main() {
 	fmt.Println("Hello", rand.Intn(10))
 	fmt.Println(math.Pi)
@@ -199,4 +211,33 @@ func main() {
 
 	PrintShapeInfo(r)
 	PrintShapeInfo(c)
+
+	describe(42)
+	describe("Hello")
+	describe(true)
+
+
+	// Type Assertion
+	var inter interface{} = "hello"
+
+	chk := inter.(string)
+	fmt.Println(chk)
+
+	chk1, ok := inter.(string)
+	fmt.Println(chk1, ok)
+
+	chk2, ok := inter.(float64)
+	fmt.Println(chk2, ok)
+
+	do(2)
+	do("hello")
+	do(true)
+	
+
+
+
+	first := person{"sadat", 22}
+	second := person{"sahil", 23}
+	// fmt here checks if the type implements the fmt.Stringer interface
+	fmt.Println(first, second)
 }

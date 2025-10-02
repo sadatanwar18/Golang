@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	
+)
 
 // import "fmt"
 
@@ -40,3 +43,40 @@ func PrintShapeInfo(s Shape) {
 	fmt.Println("Area: ", s.Area())
 	fmt.Println("Perimeter ", s.Perimeter())
 }
+
+// Empty interface
+func describe (i interface{}){
+	fmt.Printf("Type = %T, Value = %v\n", i , i)
+}
+
+
+
+	// Type Assertion
+
+	// var inter interface{} = "hello"
+
+	// chk := inter.(string)
+	// fmt.Println(chk)
+
+	// chk1, ok := inter.(string)
+	// fmt.Println(chk1, ok)
+
+	// chk2, ok := inter.(float64)
+	// fmt.Println(chk2, ok)
+
+
+	// Type Switch
+	
+	func do(i interface {}){
+		switch v := i.(type) {
+		case int:
+			fmt.Printf("Twice %v is %v\n" , v , v*2)
+		case string:
+			fmt.Printf("%q is %v bytes long\n", v , len(v))
+		default:
+			fmt.Printf("I dont know about type %T\n", v)
+		}
+	}
+
+
+	
